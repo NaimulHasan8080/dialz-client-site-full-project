@@ -11,9 +11,11 @@ const Banner = () => {
                 </Col>
                 <Col sm={12} md={6} lg={5} className="d-flex flex-column justify-content-center align-items-center">
                     <div className="fs-5 text-white ">
+
+                        <h1 className="text-secondary text-center mb-4">Dialz is a Globle brand, all are exclusive products here</h1>
                         <h1 className="text-info text-center">Our Exclusive items</h1>
-                        <h4 className="text-center"> $599</h4>
-                        <h3 className="mb-5 text-danger text-center">Metal Watch</h3>
+                        <h3 className="mb-3 text-danger text-center">Metal Watch</h3>
+                        <h4 className="text-center mb-3"> $599</h4>
                         <p className="text-center">Find Quality Products from Verified Suppliers. Get a Live Quote Now! Production Monitoring. Trade Assurance. Logistics Service. Most Popular. Types: Machinery, Home & Kitchen, Consumer Electronics, Packaging & Printing, Lights & Lighting, Apparel.</p>
                     </div>
                 </Col>

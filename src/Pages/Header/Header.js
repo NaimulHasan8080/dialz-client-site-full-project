@@ -12,7 +12,7 @@ const Header = () => {
             <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg" >
                 <Container>
                     <Navbar.Brand href="/home">
-                        <img width="50" src="https://i.ibb.co/Wz9MXth/logo-1.png" alt="" />
+                        <img width="50" src="https://demos.shopifyteam.com/dialz/wp-content/uploads/sites/254/2020/03/Time-logo-1.png" alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">

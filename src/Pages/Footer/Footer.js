@@ -5,13 +5,13 @@ import './Footer.css';
 const Footer = () => {
     return (
         <>
-            <div className="footer-area text-white pt-1 bg-dark">
+            <div className="footer-area text-white pt-1 bg-dark mt-5">
                 <div className="container">
                     <div className="row py-1">
                         <div className="col-md-6">
                             <div className="footer-logo">
-                                <img className="mb-3" src="https://i.ibb.co/Wz9MXth/logo-1.png" alt="" />
-                                <p>Swiss Eagle is an international Watch company, which has an experience of opening more than 170 shop in 10 countries of the world. Thus the restaurants of the new generation had emerged in 2017....</p>
+                                <img className="mb-3" src="https://demos.shopifyteam.com/dialz/wp-content/uploads/sites/254/2020/03/Time-logo-1.png" alt="" />
+                                <p>Dialz is an international Watch company, which has an experience of opening more than 170 shop in 10 countries of the world. Thus the restaurants of the new generation had emerged in 2017....</p>
                             </div>
 
                         </div>
