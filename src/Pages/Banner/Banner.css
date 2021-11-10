@@ -1,0 +1,11 @@
+
+.searchBox .input-group {
+    width: 50% !important;
+}
+.banner-area {
+    background:url("https://image.freepik.com/free-psd/chocolate-text-effect_125540-909.jpg") no-repeat center / cover;
+    height: 100vh;
+}
+.banner-content h1 {
+    font-size:50px;
+}
