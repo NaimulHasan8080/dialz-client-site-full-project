@@ -14,7 +14,7 @@ const SingleExplore = ({ item }) => {
 
                 </div>
                 <h6 className="text-info">Price: ${price}</h6>
-                <p className="text-justify">{description.slice(0, 100)}</p>
+                <p className="text-justify">{description?.slice(0, 100)}</p>
                 <div className="text-center">
                     <Link to={`/placeorder/${_id}`}>
                         <button className="btn text-center text-white bg-primary">Order Now</button>

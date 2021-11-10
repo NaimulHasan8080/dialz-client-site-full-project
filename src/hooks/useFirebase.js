@@ -27,14 +27,12 @@ const useFirebase = () => {
     return () => unsubscribe()
   }, [])
 
-
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider)
 
   }
 
   const logOut = () => {
-
     signOut(auth).then(() => {
       setUser({})
     }).catch((error) => {

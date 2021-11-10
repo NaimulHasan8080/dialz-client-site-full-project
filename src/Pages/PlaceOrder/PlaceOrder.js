@@ -21,7 +21,7 @@ const PlaceOrder = () => {
         const price = order.price;
         data.price = price;
 
-        fetch('https://frightful-eyeballs-23644.herokuapp.com/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -53,9 +53,9 @@ const PlaceOrder = () => {
                                 <img className="img-fluid w-50" src={order.url} alt="" />
 
                                 <p>Order Id: {id}</p>
-                                <h2 className="text-info">{order.name}</h2>
-                                <h6 className="text-danger">Price: {order.price}</h6>
-                                <p className="text-justify">{order.description}</p>
+                                <h2 className="text-info">{order?.name}</h2>
+                                <h6 className="text-danger">Price: {order?.price}</h6>
+                                <p className="text-justify">{order?.description}</p>
                             </div>
                         </div>
                         <div className="col-md-6">
