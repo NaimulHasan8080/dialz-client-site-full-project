@@ -30,7 +30,7 @@ const LogIn = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        handleLogin(data?.email, data?.password)
+        handleLogin(data?.email, data?.password, location, history)
         reset()
     }
 
