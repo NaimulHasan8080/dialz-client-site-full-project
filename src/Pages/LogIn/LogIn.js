@@ -2,10 +2,11 @@ import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 
 const LogIn = () => {
-    const { signInWithGoogle, user, setUser, logOut, setIsLoading } = useAuth();
+    const { signInWithGoogle, user, setUser, logOut, setIsLoading, handleLogin } = useAuth();
     const history = useHistory();
     const location = useLocation();
 
@@ -25,6 +26,13 @@ const LogIn = () => {
     };
 
 
+    //login user
+    const { register, handleSubmit, reset } = useForm();
+
+    const onSubmit = data => {
+        handleLogin(data?.email, data?.password)
+        reset()
+    }
 
     return (
         <>
@@ -32,6 +40,30 @@ const LogIn = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3 mx-auto p-0">
+                            <>
+                                <div className="add-food py-3 text-center">
+                                    <div className="col-md-12">
+                                        <div className="section-title mb-1">
+                                            <h2 className="text-danger">Please Login</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row justify-content-center">
+                                    <div className="col-md-12">
+                                        <div className="single-add-food">
+                                            <form onSubmit={handleSubmit(onSubmit)}>
+
+                                                <input placeholder="your Email" className="form-control mb-3" {...register("email")} type="email" required />
+
+                                                <input className="form-control mb-3" type="password" {...register("password")} placeholder="Password" />
+
+
+                                                <input type="submit" className="btn btn-primary border-0 p-2 w-100 text-white fw-bold" />
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </>
                             <div className="login-form text-center">
 
                                 {
