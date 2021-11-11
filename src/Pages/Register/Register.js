@@ -15,7 +15,7 @@ const Register = () => {
             return
         }
         else {
-            const send = { email: data?.email, name: data?.name }
+            const send = { email: data?.email, displayName: data?.name }
             axios.post('http://localhost:5000/users', send)
                 .then(res => {
                     if (res.data.insertedId) {

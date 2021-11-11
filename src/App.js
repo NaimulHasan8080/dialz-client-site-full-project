@@ -15,6 +15,7 @@ import MyOrders from './Pages/MyOrders/MyOrders';
 import UpdateStatus from './Pages/UpdateStatus/UpdateStatus';
 import Explore from './Pages/Explore/Explore';
 import Register from './Pages/Register/Register';
+import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
 
 
 
@@ -39,6 +40,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="/admindashboard">
+              <AdminDashboard></AdminDashboard>
             </Route>
             <PrivateRoute exact path="/addReview">
               <AddReview />

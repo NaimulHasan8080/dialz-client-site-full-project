@@ -9,7 +9,7 @@ const MyOrders = () => {
         fetch(`http://localhost:5000/orders/${user?.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
-    }, [user.email])
+    }, [user?.email])
 
     const handleCancel = id => {
         const proceed = window.confirm('Are you sure you want to delete');
@@ -29,18 +29,18 @@ const MyOrders = () => {
         }
     }
     return (
-        <div className="my-order-area py-5">
+        <div className="my-order-area ">
             <div className="container">
-                <div className="row py-5">
-                    <div className="col-md-12">
+                <div className="row ">
+                    <div className="col-md-12 col-sm-6">
                         <div className="section-title text-center">
                             <h2 className="text-danger">My Orders</h2>
                         </div>
                     </div>
                 </div>
                 <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="order-single">
+                    <div className="col-md-6 col-sm-12 ">
+                        <div className="order-single ">
                             <Table striped bordered>
                                 <thead>
                                     <tr>

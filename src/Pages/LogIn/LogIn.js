@@ -10,23 +10,10 @@ const LogIn = () => {
     const history = useHistory();
     const location = useLocation();
 
-    const url = location.state?.from || "/home";
-    const handleGoogleLogin = () => {
-        signInWithGoogle()
-            .then((res) => {
-                setIsLoading(true)
-                setUser(res.user)
-                history.push(url)
-            }
-            )
-            .catch((err) => console.log(err))
-            .finally(() => {
-                setIsLoading(false)
-            })
-    };
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
+    }
 
-
-    //login user
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
@@ -68,7 +55,7 @@ const LogIn = () => {
 
                                 {
                                     (!user?.displayName) ?
-                                        <button onClick={handleGoogleLogin} className="btn mt-3 bg-warning text-white  my-3">
+                                        <button onClick={handleGoogleSignIn} className="btn mt-3 bg-warning text-white  my-3">
                                             Google Sign In
                                         </button>
                                         :
