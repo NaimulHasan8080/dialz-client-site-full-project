@@ -5,7 +5,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <>
-            <div style={{ background: 'url(https://cdn.shopify.com/s/files/1/0564/2705/3216/files/slider-1.jpg?v=1633414416)' }} className="footer-area text-white pt-1 mt-5">
+            <div style={{ background: 'url(https://cdn.shopify.com/s/files/1/0564/2705/3216/files/slider-1.jpg?v=1633414416)' }} className="footer-area text-white pt-1 text-center mt-5">
                 <div className="container">
                     <div className="row py-1">
                         <div className="col-md-6">

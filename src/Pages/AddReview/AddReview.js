@@ -9,8 +9,6 @@ const AddReview = () => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        console.log(data);
-
         axios.post('http://localhost:5000/review', data)
             .then(res => {
                 if (res.data.insertedId) {

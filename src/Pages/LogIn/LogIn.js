@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const LogIn = () => {
@@ -35,16 +36,19 @@ const LogIn = () => {
 
                                 {
                                     (!user?.displayName) ?
-                                        <button onClick={handleGoogleLogin} className="btn mt-3 bg-warning text-white">
+                                        <button onClick={handleGoogleLogin} className="btn mt-3 bg-warning text-white  my-3">
                                             Google Sign In
                                         </button>
                                         :
                                         <button onClick={logOut} className="
-                                        btn btn-primary mt-3 text-white">
+                                        btn btn-primary text-white">
                                             Log Out
                                         </button>
 
                                 }
+                                <br />
+
+                                <Link style={{ textDecoration: 'none' }} to="/register">New User ? Please Register </Link>
                             </div>
                         </div>
                     </div>

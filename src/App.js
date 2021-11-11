@@ -14,6 +14,8 @@ import PrivateRoute from './routes/PrivateRoute';
 import MyOrders from './Pages/MyOrders/MyOrders';
 import UpdateStatus from './Pages/UpdateStatus/UpdateStatus';
 import Explore from './Pages/Explore/Explore';
+import Register from './Pages/Register/Register';
+
 
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
             </Route>
             <Route path="/login">
               <LogIn />
+            </Route>
+            <Route path="/register">
+              <Register />
             </Route>
             <PrivateRoute exact path="/addReview">
               <AddReview />
