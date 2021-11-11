@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 
@@ -49,7 +50,10 @@ const Register = () => {
                                 <input className="form-control mb-3" type="password" {...register("password2")} placeholder="Confirm password" />
 
 
-                                <input type="submit" className="btn btn-primary border-0 p-2 w-25 text-white fw-bold" />
+                                <input type="submit" value="Register" className="btn btn-primary border-0 p-2 w-25 text-white mb-3 fw-bold" />
+                                <br />
+
+                                <Link style={{ textDecoration: 'none', fontSize: '22px' }} to="/login">Already Register ? Please Login </Link>
                             </form>
                         </div>
                     </div>
