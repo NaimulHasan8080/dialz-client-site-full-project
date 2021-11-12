@@ -17,6 +17,7 @@ import DashboardHomepage from './DashboardHomepage';
 import AddProducts from './AddProducts';
 import AddReview from '../AddReview/AddReview';
 import ManageProducts from './ManageProducts';
+import Subscriber from './Subscriber';
 
 
 const AdminDashboard = () => {
@@ -35,19 +36,23 @@ const AdminDashboard = () => {
 
                         <Link to={`${url}`}><button className="btn btn-primary my-2">Dashboard</button></Link><br />
 
-                        <Link to={`${url}/myorder`}><button className="btn btn-primary my-2">My Orders</button></Link><br />
+                        {!admin && <> <Link to={`${url}/myorder`}><button className="btn btn-primary my-2">My Orders</button></Link> <br /></>}
 
-                        <Link to={`${url}/payment`}><button className="btn btn-primary  my-2">Payment</button></Link><br />
+                        {!admin && <> <Link to={`${url}/payment`}><button className="btn btn-primary  my-2">Payment</button></Link><br /></>}
 
-                        <Link to={`${url}/addReview`}><button className="btn btn-primary  my-2">Add Review</button></Link><br />
+                        {!admin && <Link to={`${url}/addReview`}><button className="btn btn-primary  my-2">Add Review</button></Link>}<br />
 
                         {admin && <Link to={`${url}/makeadmin`}><button className="btn btn-primary my-2">Make Admin</button></Link>}<br />
 
-                        {admin && <Link to={`${url}/addproducts`}><button className="btn btn-primary my-2">Add Products</button></Link>}<br />
+                        {admin && <> <Link to={`${url}/addproducts`}><button className="btn btn-primary my-2">Add Products</button></Link><br /></>}
 
-                        <Link to={`${url}/manageorders`}><button className="btn btn-primary my-2">Manage Order</button></Link> <br />
+                        {admin && <> <Link to={`${url}/manageorders`}><button className="btn btn-primary my-2">Manage Order</button></Link> <br /></>}
 
-                        <Link to={`${url}/manageproducts`}><button className="btn btn-primary my-2">Manage Products</button></Link> <br />
+                        {admin && <> <Link to={`${url}/manageproducts`}><button className="btn btn-primary my-2">Manage Products</button></Link><br /></>}
+
+
+                        {admin && <> <Link to={`${url}/subscriber`}><button className="btn btn-primary my-2">Subscriber</button></Link><br /></>}
+
 
                         <button onClick={logOut} className="btn btn-danger fw-bold my-2">Logout</button>
                     </div>
@@ -80,6 +85,11 @@ const AdminDashboard = () => {
                         <AdminRoute exact path={`${path}/manageorders`}>
                             <ManageOrders></ManageOrders>
                         </AdminRoute>
+
+                        <AdminRoute exact path={`${path}/subscriber`}>
+                            <Subscriber></Subscriber>
+                        </AdminRoute>
+
 
                         <AdminRoute exact path={`${path}/manageproducts`}>
                             <ManageProducts></ManageProducts>

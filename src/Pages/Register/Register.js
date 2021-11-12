@@ -20,7 +20,7 @@ const Register = () => {
                 .then(res => {
                     if (res.data.insertedId) {
                         handleRegister(data?.email, data?.password, data?.name, history)
-                        alert('added successfully');
+                        alert('Register successfully');
                         reset();
                     }
                 })

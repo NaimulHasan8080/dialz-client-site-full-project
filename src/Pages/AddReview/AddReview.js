@@ -12,7 +12,7 @@ const AddReview = () => {
         axios.post('http://localhost:5000/review', data)
             .then(res => {
                 if (res.data.insertedId) {
-                    alert('added successfully');
+                    alert('Review added successfully');
                     reset();
                 }
             })
