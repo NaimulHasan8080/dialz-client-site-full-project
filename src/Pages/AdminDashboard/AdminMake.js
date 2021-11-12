@@ -28,11 +28,11 @@ const AdminMake = () => {
         e.preventDefault()
     }
     return (
-        <div className="text-center ">
-            <h2>make admin</h2>
+        <div className="text-center text-danger  ">
+            <h2>Make Admin</h2>
             <form onSubmit={handleSubmit}>
-                <input className="w-50 p-1" type="email" onBlur={handleBlur} placeholder="write an email" />
-                <input type="submit" value="Make Admin " />
+                <input className="w-50 p-1 my-2" type="email" onBlur={handleBlur} placeholder="write an email" /> <br />
+                <input className="btn btn-primary fw-bold" type="submit" value="Make Admin " />
             </form>
             {success && <div className="alert alert-success mt-4" role="alert">
                 Make admin successfully

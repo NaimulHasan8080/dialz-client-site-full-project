@@ -35,7 +35,7 @@ const AddReview = () => {
                                 <input className="form-control mb-3" {...register("name")} value={user.email} value={user?.displayName} required />
                                 <input className="form-control mb-3" type="number" {...register("rating", { min: 0, max: 5 })} placeholder="Rating(0-5)" />
 
-                                <textarea style={{ height: '140px' }} className="form-control mb-3" {...register("comment")} placeholder="write your comment here" required />
+                                <textarea style={{ height: '100px' }} className="form-control mb-3" {...register("comment")} placeholder="write your comment here" required />
 
                                 <input type="submit" className="btn btn-primary border-0 p-2 w-25 text-white fw-bold" />
                             </form>

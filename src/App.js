@@ -44,9 +44,9 @@ function App() {
             <PrivateRoute path="/admindashboard">
               <AdminDashboard></AdminDashboard>
             </PrivateRoute>
-            <PrivateRoute exact path="/addReview">
+            {/* <PrivateRoute exact path="/addReview">
               <AddReview />
-            </PrivateRoute>
+            </PrivateRoute> */}
             <PrivateRoute exact path="/placeorder/:id">
               <PlaceOrder />
             </PrivateRoute>

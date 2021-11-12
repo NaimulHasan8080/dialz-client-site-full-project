@@ -13,12 +13,16 @@ import ManageOrders from '../ManageOrders/ManageOrders';
 import useAuth from '../../hooks/useAuth';
 import AdminRoute from '../../routes/AdminRoute';
 import Payment from './Payment';
+import DashboardHomepage from './DashboardHomepage';
+import AddProducts from './AddProducts';
+import AddReview from '../AddReview/AddReview';
+import ManageProducts from './ManageProducts';
 
 
 const AdminDashboard = () => {
     let { path, url } = useRouteMatch();
 
-    const { admin } = useAuth();
+    const { admin, logOut } = useAuth();
     return (
         <Container className="mt-3">
             <Row>
@@ -26,29 +30,62 @@ const AdminDashboard = () => {
                     borderRight: '1px solid gray',
                     background: '#DCDCDC'
                 }}>
-                    <ul>
-                        <Link to="home"> Home</Link>
-                        <Link to={`${url}`}><li >My Orders</li></Link>
-                        <Link to={`${url}/payment`}><li>Payment</li></Link>
-                        {admin && <Link to={`${url}/makeadmin`}><li>Make Admin</li></Link>}
-                        <Link to={`${url}/manageorders`}><li>Manage Order</li></Link>
+                    <div className="p-3 text-center">
+                        <Link to="/home"> <button className="btn btn-primary my-2 text-center">Home</button></Link> <br />
 
-                    </ul>
+                        <Link to={`${url}`}><button className="btn btn-primary my-2">Dashboard</button></Link><br />
+
+                        <Link to={`${url}/myorder`}><button className="btn btn-primary my-2">My Orders</button></Link><br />
+
+                        <Link to={`${url}/payment`}><button className="btn btn-primary  my-2">Payment</button></Link><br />
+
+                        <Link to={`${url}/addReview`}><button className="btn btn-primary  my-2">Add Review</button></Link><br />
+
+                        {admin && <Link to={`${url}/makeadmin`}><button className="btn btn-primary my-2">Make Admin</button></Link>}<br />
+
+                        {admin && <Link to={`${url}/addproducts`}><button className="btn btn-primary my-2">Add Products</button></Link>}<br />
+
+                        <Link to={`${url}/manageorders`}><button className="btn btn-primary my-2">Manage Order</button></Link> <br />
+
+                        <Link to={`${url}/manageproducts`}><button className="btn btn-primary my-2">Manage Products</button></Link> <br />
+
+                        <button onClick={logOut} className="btn btn-danger fw-bold my-2">Logout</button>
+                    </div>
                 </Col>
                 <Col xs={12} sm={12} md={8} lg={9} style={{ background: '#F0F8FF' }}>
                     <Switch>
                         <Route exact path={path}>
-                            <MyOrders></MyOrders>
+                            <DashboardHomepage></DashboardHomepage>
                         </Route>
                         <Route path={`${path}/payment`}>
                             <Payment></Payment>
                         </Route>
+
+                        <Route path={`${path}/myorder`}>
+                            <MyOrders></MyOrders>
+                        </Route>
+
+                        <Route path={`${path}/addReview`}>
+                            <AddReview></AddReview>
+                        </Route>
+
+                        <Route path={`${path}/addproducts`}>
+                            <AddProducts></AddProducts>
+                        </Route>
+
                         <AdminRoute path={`${path}/makeadmin`}>
                             <AdminMake></AdminMake>
                         </AdminRoute>
+
                         <AdminRoute path={`${path}/manageorders`}>
                             <ManageOrders></ManageOrders>
                         </AdminRoute>
+
+                        <AdminRoute path={`${path}/manageproducts`}>
+                            <ManageProducts></ManageProducts>
+                        </AdminRoute>
+
+
                     </Switch>
                 </Col>
             </Row>
