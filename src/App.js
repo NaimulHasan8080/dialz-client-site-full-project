@@ -41,21 +41,21 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            <Route path="/admindashboard">
+            <PrivateRoute path="/admindashboard">
               <AdminDashboard></AdminDashboard>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute exact path="/addReview">
               <AddReview />
             </PrivateRoute>
             <PrivateRoute exact path="/placeorder/:id">
               <PlaceOrder />
             </PrivateRoute>
-            <PrivateRoute exact path="/myorder">
+            {/* <PrivateRoute exact path="/myorder">
               <MyOrders />
-            </PrivateRoute>
-            <PrivateRoute exact path="/manageorders">
+            </PrivateRoute> */}
+            {/* <PrivateRoute exact path="/manageorders">
               <ManageOrders />
-            </PrivateRoute>
+            </PrivateRoute> */}
             <Route exact path="/update/:id">
               <UpdateStatus />
             </Route>

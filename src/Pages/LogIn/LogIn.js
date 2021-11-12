@@ -23,7 +23,7 @@ const LogIn = () => {
 
     return (
         <>
-            <div className="log-in-area py-5">
+            <div style={{ background: '#DCDCDC' }} className="log-in-area py-5">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-3 mx-auto p-0">
@@ -67,7 +67,7 @@ const LogIn = () => {
                                 }
                                 <br />
 
-                                <Link style={{ textDecoration: 'none' }} to="/register">New User ? Please Register </Link>
+                                <Link style={{ textDecoration: 'none', fontSize: '22px' }} to="/register">New User ? Please Register </Link>
                             </div>
                         </div>
                     </div>

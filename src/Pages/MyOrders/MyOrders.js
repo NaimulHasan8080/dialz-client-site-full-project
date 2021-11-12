@@ -34,7 +34,7 @@ const MyOrders = () => {
                 <div className="row ">
                     <div className="col-md-12 col-sm-6">
                         <div className="section-title text-center">
-                            <h2 className="text-danger">My Orders</h2>
+                            <h2 className="text-danger ">My Orders</h2>
                         </div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@ const MyOrders = () => {
                         <div className="order-single ">
                             <Table striped bordered>
                                 <thead>
-                                    <tr>
+                                    <tr >
                                         <th>Id</th>
                                         <th>Product Name</th>
                                         <th>Price</th>

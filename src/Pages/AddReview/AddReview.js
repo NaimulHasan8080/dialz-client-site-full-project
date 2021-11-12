@@ -18,7 +18,7 @@ const AddReview = () => {
             })
     }
     return (
-        <div className="add-food py-5 text-center">
+        <div style={{ background: '#DCDCDC' }} className="add-food py-5 text-center">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
