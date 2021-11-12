@@ -1,13 +1,35 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../hooks/useAuth';
 
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
+    const { isLoading, user } = useAuth()
 
     useEffect(() => {
         fetch('http://localhost:5000/service')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, [user?.email]);
+
+    const handleDelete = id => {
+
+        console.log(id);
+        const proceed = window.confirm('Are you sure you want to delete');
+        if (proceed) {
+            const url = `http://localhost:5000/service/${id}`;
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('Deleted Successfully');
+                        const remainingProducts = products.filter(product => product._id !== id);
+                        setProducts(remainingProducts);
+                    }
+                })
+        }
+    }
 
     return (
         <div className="text-center">
@@ -20,7 +42,10 @@ const ManageProducts = () => {
                     <li><img className="w-25" src={product.url} alt="" /></li>
                     <li>{product._id}</li>
                     <li className="fs-3 text-success">{product.name}</li>
-                    <li><button className="btn btn-danger">Delete</button></li>
+                    <li><button
+                        className="btn btn-danger"
+                        onClick={() => handleDelete(product._id)}
+                    >Delete</button></li>
                 </ul>)
             }
         </div>

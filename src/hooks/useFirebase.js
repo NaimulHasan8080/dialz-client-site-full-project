@@ -22,18 +22,15 @@ const useFirebase = () => {
       //  console.log(user);
       if (user) {
         setUser(user)
+        setIsLoading(true)
       } else {
         setUser({})
       }
       setIsLoading(false)
     })
     return () => unsubscribe()
-  }, [])
+  }, []);
 
-  // const signInWithGoogle = () => {
-  //   return signInWithPopup(auth, googleProvider)
-
-  // }
 
   const signInWithGoogle = (location, history) => {
     setIsLoading(true);
@@ -59,11 +56,11 @@ const useFirebase = () => {
   }
 
   const handleRegister = (email, password, name, history) => {
+    setIsLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const newUser = { email, displayName: name }
         setUser(newUser)
-
         updateProfile(auth.currentUser, {
           displayName: name
         }).then(() => {

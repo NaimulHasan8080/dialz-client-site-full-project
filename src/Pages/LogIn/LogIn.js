@@ -34,6 +34,9 @@ const LogIn = () => {
                                             <h2 className="text-danger">Please Login</h2>
                                         </div>
                                     </div>
+                                    {
+                                        setIsLoading && <span class="visually-hidden">Loading...</span>
+                                    }
                                 </div>
                                 <div className="row justify-content-center">
                                     <div className="col-md-12">

@@ -57,31 +57,31 @@ const AdminDashboard = () => {
                         <Route exact path={path}>
                             <DashboardHomepage></DashboardHomepage>
                         </Route>
-                        <Route path={`${path}/payment`}>
+                        <Route exact path={`${path}/payment`}>
                             <Payment></Payment>
                         </Route>
 
-                        <Route path={`${path}/myorder`}>
+                        <Route exact path={`${path}/myorder`}>
                             <MyOrders></MyOrders>
                         </Route>
 
-                        <Route path={`${path}/addReview`}>
+                        <Route exact path={`${path}/addReview`}>
                             <AddReview></AddReview>
                         </Route>
 
-                        <Route path={`${path}/addproducts`}>
+                        <Route exact path={`${path}/addproducts`}>
                             <AddProducts></AddProducts>
                         </Route>
 
-                        <AdminRoute path={`${path}/makeadmin`}>
+                        <AdminRoute exact path={`${path}/makeadmin`}>
                             <AdminMake></AdminMake>
                         </AdminRoute>
 
-                        <AdminRoute path={`${path}/manageorders`}>
+                        <AdminRoute exact path={`${path}/manageorders`}>
                             <ManageOrders></ManageOrders>
                         </AdminRoute>
 
-                        <AdminRoute path={`${path}/manageproducts`}>
+                        <AdminRoute exact path={`${path}/manageproducts`}>
                             <ManageProducts></ManageProducts>
                         </AdminRoute>
 
