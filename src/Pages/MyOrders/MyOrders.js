@@ -31,42 +31,32 @@ const MyOrders = () => {
     return (
         <div className="my-order-area ">
             <div className="container">
-                <div className="row ">
-                    <div className="col-md-12 col-sm-6">
-                        <div className="section-title text-center">
-                            <h2 className="text-danger ">My Orders</h2>
-                        </div>
-                    </div>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-md-6 col-sm-12 ">
-                        <div className="order-single ">
-                            <Table striped bordered>
-                                <thead>
-                                    <tr >
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        myOrders.map(order => <tr key={order._id}>
-                                            <td>{order._id}</td>
-                                            <td>{order.name}</td>
-                                            <td>{order.price}</td>
-                                            <td>{order.status}</td>
-                                            <td>
-                                                <button onClick={() => handleCancel(order._id)} className="btn btn-danger ms-2">Cancel</button>
-                                            </td>
-                                        </tr>
-                                        )}
-                                </tbody>
-                            </Table>
-                        </div>
-                    </div>
+                <h2 className="text-danger ">My Orders</h2>
+                <div className="mx-auto">
+                    <Table striped bordered responsive hover>
+                        <thead>
+                            <tr className="bg-info text-white">
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                myOrders.map(order => <tr key={order._id} className="bg-success text-white">
+                                    <td>{order._id}</td>
+                                    <td>{order.name}</td>
+                                    <td>{order.price}</td>
+                                    <td>{order.status}</td>
+                                    <td>
+                                        <button onClick={() => handleCancel(order._id)} className="btn btn-danger ms-2">Cancel</button>
+                                    </td>
+                                </tr>
+                                )}
+                        </tbody>
+                    </Table>
                 </div>
             </div>
         </div>

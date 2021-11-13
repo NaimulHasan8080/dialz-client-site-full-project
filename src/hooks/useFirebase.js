@@ -66,7 +66,7 @@ const useFirebase = () => {
         }).then(() => {
 
         }).catch((error) => {
-
+          setError(error.message)
         });
         history.replace('/home')
       })

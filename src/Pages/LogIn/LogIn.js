@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 
 
 const LogIn = () => {
-    const { signInWithGoogle, user, setUser, logOut, setIsLoading, handleLogin } = useAuth();
+    const { signInWithGoogle, user, logOut, setIsLoading, handleLogin } = useAuth();
     const history = useHistory();
     const location = useLocation();
 
