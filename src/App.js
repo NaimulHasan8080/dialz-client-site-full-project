@@ -7,11 +7,8 @@ import Footer from './Pages/Footer/Footer';
 import Home from './Pages/Home/Home';
 import NotFound from './Pages/NotFound/NotFound';
 import LogIn from './Pages/LogIn/LogIn';
-// import AddReview from './Pages/AddReview/AddReview';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
-// import ManageOrders from './Pages/ManageOrders/ManageOrders';
 import PrivateRoute from './routes/PrivateRoute';
-// import MyOrders from './Pages/MyOrders/MyOrders';
 import UpdateStatus from './Pages/UpdateStatus/UpdateStatus';
 import Explore from './Pages/Explore/Explore';
 import Register from './Pages/Register/Register';
@@ -44,18 +41,10 @@ function App() {
             <PrivateRoute path="/admindashboard">
               <AdminDashboard></AdminDashboard>
             </PrivateRoute>
-            {/* <PrivateRoute exact path="/addReview">
-              <AddReview />
-            </PrivateRoute> */}
             <PrivateRoute exact path="/placeorder/:id">
               <PlaceOrder />
             </PrivateRoute>
-            {/* <PrivateRoute exact path="/myorder">
-              <MyOrders />
-            </PrivateRoute> */}
-            {/* <PrivateRoute exact path="/manageorders">
-              <ManageOrders />
-            </PrivateRoute> */}
+
             <Route exact path="/update/:id">
               <UpdateStatus />
             </Route>
