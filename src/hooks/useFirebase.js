@@ -29,7 +29,7 @@ const useFirebase = () => {
       setIsLoading(false)
     })
     return () => unsubscribe()
-  }, []);
+  }, [auth]);
 
 
   const signInWithGoogle = (location, history) => {
@@ -38,7 +38,7 @@ const useFirebase = () => {
       .then((result) => {
         const user = result.user;
         const users = { email: user.email, displayName: user.displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://fathomless-plateau-44486.herokuapp.com/users', {
           method: 'PUT',
           headers: {
             'content-type': 'application/json'
@@ -92,9 +92,12 @@ const useFirebase = () => {
 
   //check admin 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://fathomless-plateau-44486.herokuapp.com/users/${user?.email}`)
       .then(res => res.json())
-      .then(data => setAdmin(data.admin))
+      .then(data => {
+        console.log(data);
+        setAdmin(data?.admin)
+      })
   }, [user?.email])
 
 

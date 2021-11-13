@@ -16,7 +16,7 @@ const Register = () => {
         }
         else {
             const send = { email: data?.email, displayName: data?.name }
-            axios.post('http://localhost:5000/users', send)
+            axios.post('https://fathomless-plateau-44486.herokuapp.com/users', send)
                 .then(res => {
                     if (res.data.insertedId) {
                         handleRegister(data?.email, data?.password, data?.name, history)

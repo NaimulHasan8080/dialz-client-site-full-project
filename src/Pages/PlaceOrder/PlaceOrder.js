@@ -11,7 +11,7 @@ const PlaceOrder = () => {
     const { id } = useParams();
     const [order, setOrder] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${id}`)
+        fetch(`https://fathomless-plateau-44486.herokuapp.com/service/${id}`)
             .then(res => res.json())
             .then(data => setOrder(data));
     }, [id])
@@ -21,7 +21,7 @@ const PlaceOrder = () => {
         const price = order.price;
         data.price = price;
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://fathomless-plateau-44486.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

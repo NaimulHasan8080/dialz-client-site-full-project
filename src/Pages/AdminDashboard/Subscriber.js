@@ -4,7 +4,7 @@ const Subscriber = () => {
     const [subscribers, setSubscribers] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/subscriber')
+        fetch('https://fathomless-plateau-44486.herokuapp.com/subscriber')
             .then(res => res.json())
             .then(data => setSubscribers(data))
     }, [])

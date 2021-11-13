@@ -5,7 +5,7 @@ import SingleExplore from './SingleExplore';
 const Explore = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://fathomless-plateau-44486.herokuapp.com/service')
             .then(res => res.json())
             .then(data => setItems(data));
     }, [])

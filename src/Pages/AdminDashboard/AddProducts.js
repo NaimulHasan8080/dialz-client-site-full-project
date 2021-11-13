@@ -7,7 +7,7 @@ const AddProducts = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://fathomless-plateau-44486.herokuapp.com/products', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added product  successfully');

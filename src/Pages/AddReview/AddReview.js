@@ -9,7 +9,7 @@ const AddReview = () => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        axios.post('http://localhost:5000/review', data)
+        axios.post('https://fathomless-plateau-44486.herokuapp.com/review', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Review added successfully');

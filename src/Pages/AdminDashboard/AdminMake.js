@@ -11,7 +11,7 @@ const AdminMake = () => {
     const handleSubmit = e => {
         const user = { email }
 
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://fathomless-plateau-44486.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)
@@ -22,7 +22,7 @@ const AdminMake = () => {
                     setSuccess(true)
                     setEmail('')
                 }
-                console.log(data);
+                // console.log(data);
             })
 
         e.preventDefault()

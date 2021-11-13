@@ -31,27 +31,33 @@ const AdminDashboard = () => {
                     borderRight: '1px solid gray',
                     background: '#DCDCDC'
                 }}>
-                    <div className="p-3 text-center">
-                        <Link to="/home"> <button className="btn btn-primary my-2 text-center">Home</button></Link> <br />
 
-                        <Link to={`${url}`}><button className="btn btn-primary my-2">Dashboard</button></Link><br />
+                    <div>
+                        {!admin &&
+                            <div className="p-3 text-center">
+                                <Link to="/home"> <button className="btn btn-primary my-2 text-center">Home</button></Link> <br />
 
-                        {!admin && <> <Link to={`${url}/myorder`}><button className="btn btn-primary my-2">My Orders</button></Link> <br /></>}
+                                <Link to={`${url}`}><button className="btn btn-primary my-2">Dashboard</button></Link><br />
 
-                        {!admin && <> <Link to={`${url}/payment`}><button className="btn btn-primary  my-2">Payment</button></Link><br /></>}
+                                <Link to={`${url}/myorder`}><button className="btn btn-primary my-2">My Orders</button></Link> <br />
 
-                        {!admin && <Link to={`${url}/addReview`}><button className="btn btn-primary  my-2">Add Review</button></Link>}<br />
+                                <Link to={`${url}/payment`}><button className="btn btn-primary  my-2">Payment</button></Link><br />
 
-                        {admin && <Link to={`${url}/makeadmin`}><button className="btn btn-primary my-2">Make Admin</button></Link>}<br />
+                                <Link to={`${url}/addReview`}><button className="btn btn-primary  my-2">Add Review</button></Link><br />
+                            </div>}
 
-                        {admin && <> <Link to={`${url}/addproducts`}><button className="btn btn-primary my-2">Add Products</button></Link><br /></>}
+                        {admin && <div>
+                            <Link to={`${url}/makeadmin`}><button className="btn btn-primary my-2">Make Admin</button></Link><br />
 
-                        {admin && <> <Link to={`${url}/manageorders`}><button className="btn btn-primary my-2">Manage Order</button></Link> <br /></>}
+                            <Link to={`${url}/addproducts`}><button className="btn btn-primary my-2">Add Products</button></Link><br />
 
-                        {admin && <> <Link to={`${url}/manageproducts`}><button className="btn btn-primary my-2">Manage Products</button></Link><br /></>}
+                            <Link to={`${url}/manageorders`}><button className="btn btn-primary my-2">Manage Order</button></Link> <br />
+
+                            <Link to={`${url}/manageproducts`}><button className="btn btn-primary my-2">Manage Products</button></Link><br />
 
 
-                        {admin && <> <Link to={`${url}/subscriber`}><button className="btn btn-primary my-2">Subscriber</button></Link><br /></>}
+                            <Link to={`${url}/subscriber`}><button className="btn btn-primary my-2">Subscriber</button></Link><br />
+                        </div>}
 
 
                         <button onClick={logOut} className="btn btn-danger fw-bold my-2">Logout</button>
@@ -66,32 +72,31 @@ const AdminDashboard = () => {
                             <Payment></Payment>
                         </Route>
 
-                        <Route exact path={`${path}/myorder`}>
+                        <Route path={`${path}/myorder`}>
                             <MyOrders></MyOrders>
                         </Route>
 
-                        <Route exact path={`${path}/addReview`}>
+                        <Route path={`${path}/addReview`}>
                             <AddReview></AddReview>
                         </Route>
 
-                        <Route exact path={`${path}/addproducts`}>
+                        <Route path={`${path}/addproducts`}>
                             <AddProducts></AddProducts>
                         </Route>
 
-                        <AdminRoute exact path={`${path}/makeadmin`}>
+                        <Route path={`${path}/makeadmin`}>
                             <AdminMake></AdminMake>
-                        </AdminRoute>
+                        </Route>
 
-                        <AdminRoute exact path={`${path}/manageorders`}>
+                        <AdminRoute path={`${path}/manageorders`}>
                             <ManageOrders></ManageOrders>
                         </AdminRoute>
 
-                        <AdminRoute exact path={`${path}/subscriber`}>
+                        <AdminRoute path={`${path}/subscriber`}>
                             <Subscriber></Subscriber>
                         </AdminRoute>
 
-
-                        <AdminRoute exact path={`${path}/manageproducts`}>
+                        <AdminRoute path={`${path}/manageproducts`}>
                             <ManageProducts></ManageProducts>
                         </AdminRoute>
 

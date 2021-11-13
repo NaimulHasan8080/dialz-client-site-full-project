@@ -6,7 +6,7 @@ const ManageProducts = () => {
     const { isLoading, user } = useAuth()
 
     useEffect(() => {
-        fetch('http://localhost:5000/service')
+        fetch('https://fathomless-plateau-44486.herokuapp.com/service')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [user?.email]);
@@ -16,7 +16,7 @@ const ManageProducts = () => {
         console.log(id);
         const proceed = window.confirm('Are you sure you want to delete');
         if (proceed) {
-            const url = `http://localhost:5000/service/${id}`;
+            const url = `https://fathomless-plateau-44486.herokuapp.com/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })

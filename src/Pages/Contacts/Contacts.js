@@ -11,7 +11,7 @@ const Contacts = () => {
     const handleSubmit = (e) => {
         const user = { email }
 
-        fetch('http://localhost:5000/subscriber', {
+        fetch('https://fathomless-plateau-44486.herokuapp.com/subscriber', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(user)

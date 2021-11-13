@@ -4,16 +4,17 @@ import { Spinner } from 'react-bootstrap';
 import useAuth from '../hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
-    const { user, isLoading, admin } = useAuth();
+    const { user, admin, isLoading } = useAuth();
     if (isLoading) {
         return <Spinner animation="border" variant="danger" />
     }
+    console.log(admin);
     return (
         <Route
             {...rest}
-            render={({ location }) => user.email && admin ? children : <Redirect
+            render={({ location }) => user?.email && admin ? children : <Redirect
                 to={{
-                    pathname: "/home",
+                    pathname: "/",
                     state: { from: location }
                 }}
             ></Redirect>}
