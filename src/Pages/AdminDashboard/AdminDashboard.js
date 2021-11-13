@@ -80,13 +80,13 @@ const AdminDashboard = () => {
                             <AddReview></AddReview>
                         </Route>
 
-                        <Route path={`${path}/addproducts`}>
+                        <AdminRoute path={`${path}/addproducts`}>
                             <AddProducts></AddProducts>
-                        </Route>
+                        </AdminRoute>
 
-                        <Route path={`${path}/makeadmin`}>
+                        <AdminRoute path={`${path}/makeadmin`}>
                             <AdminMake></AdminMake>
-                        </Route>
+                        </AdminRoute>
 
                         <AdminRoute path={`${path}/manageorders`}>
                             <ManageOrders></ManageOrders>

@@ -48,7 +48,7 @@ const LogIn = () => {
                                                 <input className="form-control mb-3" type="password" {...register("password")} placeholder="Password" />
 
 
-                                                <input type="submit" className="btn btn-primary border-0 p-2 w-100 text-white fw-bold" />
+                                                <input type="submit" value="Login" className="btn btn-primary border-0 p-2 w-100 text-white fw-bold" />
                                             </form>
                                         </div>
                                     </div>
