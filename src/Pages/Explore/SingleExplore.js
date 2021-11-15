@@ -6,7 +6,7 @@ const SingleExplore = ({ item }) => {
     return (
         <div className="col-lg-4">
             <div className="card mb-3 single-service  p-3">
-                <img src={url} alt="" />
+                <img style={{ objectFit: 'cover' }} src={url} alt="" />
                 <div className="d-flex justify-content-between my-3">
                     <div className="text-center">
                         <h3 className="my-3 text-danger text-center ">{name}</h3>

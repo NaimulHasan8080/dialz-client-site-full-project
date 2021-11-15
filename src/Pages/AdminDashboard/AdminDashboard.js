@@ -68,7 +68,7 @@ const AdminDashboard = () => {
                         <Route exact path={path}>
                             <DashboardHomepage></DashboardHomepage>
                         </Route>
-                        <Route exact path={`${path}/payment`}>
+                        <Route exact path={`${path}/payment/:paymentId`}>
                             <Payment></Payment>
                         </Route>
 

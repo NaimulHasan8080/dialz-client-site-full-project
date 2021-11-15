@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import useFirebase from '../../hooks/useFirebase';
 import './MyOrders.css';
 const MyOrders = () => {
@@ -40,6 +41,7 @@ const MyOrders = () => {
                                 <th>Name</th>
                                 <th>Price</th>
                                 <th>Status</th>
+                                <th>Payment</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -50,6 +52,7 @@ const MyOrders = () => {
                                     <td>{order.name}</td>
                                     <td>{order.price}</td>
                                     <td>{order.status}</td>
+                                    <td>{order.payment ? 'paid' : <Link to={`payment/${order._id}`}><button className="btn btn-primary">Payment</button></Link>}</td>
                                     <td>
                                         <button onClick={() => handleCancel(order._id)} className="btn btn-danger ms-2">Cancel</button>
                                     </td>
