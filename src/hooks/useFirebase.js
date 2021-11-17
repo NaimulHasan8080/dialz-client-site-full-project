@@ -95,7 +95,7 @@ const useFirebase = () => {
     fetch(`https://fathomless-plateau-44486.herokuapp.com/users/${user?.email}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        // console.log(data);
         setAdmin(data?.admin)
       })
   }, [user?.email])

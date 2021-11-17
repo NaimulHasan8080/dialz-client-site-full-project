@@ -16,15 +16,15 @@ const Payment = () => {
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [paymentId])
-    console.log(order);
+    // console.log(order);
     return (
         <div className="text-center text-danger">
 
             <h2>{order?.name} order for {order._id} </h2>
             <h2>price : {order?.price} </h2>
-            <Elements stripe={stripePromise}>
+            {order.price && <Elements stripe={stripePromise}>
                 <CheckoutForm order={order} />
-            </Elements>
+            </Elements>}
         </div>
     );
 };
