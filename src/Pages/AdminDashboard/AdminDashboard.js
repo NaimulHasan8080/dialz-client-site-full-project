@@ -18,7 +18,8 @@ import AddProducts from './AddProducts';
 import AddReview from '../AddReview/AddReview';
 import ManageProducts from './ManageProducts';
 import Subscriber from './Subscriber';
-
+import AddMember from './AddMember'
+import AllMembers from './AllMembers';
 
 const AdminDashboard = () => {
     let { path, url } = useRouteMatch();
@@ -43,6 +44,7 @@ const AdminDashboard = () => {
 
                                 <Link to={`${url}/payment`}><button className="btn btn-primary  my-2">Payment</button></Link><br />
 
+
                                 <Link to={`${url}/addReview`}><button className="btn btn-primary  my-2">Add Review</button></Link><br />
                             </div>}
 
@@ -55,11 +57,14 @@ const AdminDashboard = () => {
 
                             <Link to={`${url}/manageproducts`}><button className="btn btn-primary my-2">Manage Products</button></Link><br />
 
+                            <Link to={`${url}/AddMember`}><button className="btn btn-primary my-2">Add Member</button></Link><br />
+
 
                             <Link to={`${url}/subscriber`}><button className="btn btn-primary my-2">Subscriber</button></Link><br />
                         </div>}
 
 
+                        <Link to={`${url}/members`}><button className="btn btn-primary  my-2">All Members</button></Link><br />
                         <button onClick={logOut} className="btn btn-danger fw-bold my-2">Logout</button>
                     </div>
                 </Col>
@@ -94,6 +99,14 @@ const AdminDashboard = () => {
 
                         <AdminRoute path={`${path}/subscriber`}>
                             <Subscriber></Subscriber>
+                        </AdminRoute>
+
+                        <AdminRoute path={`${path}/AddMember`}>
+                            <AddMember></AddMember>
+                        </AdminRoute>
+
+                        <AdminRoute path={`${path}/members`}>
+                            <AllMembers></AllMembers>
                         </AdminRoute>
 
                         <AdminRoute path={`${path}/manageproducts`}>

@@ -6,7 +6,6 @@ const AddProducts = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
         axios.post('https://fathomless-plateau-44486.herokuapp.com/products', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -31,9 +30,7 @@ const AddProducts = () => {
                             <div className="single-add-food">
                                 <form onSubmit={handleSubmit(onSubmit)}>
 
-
                                     <input className="form-control mb-3" {...register("name")} placeholder="Products Name" required />
-
 
                                     <input className="form-control mb-3" type="number" {...register("price")} placeholder="Products Price" />
 

@@ -62,15 +62,15 @@ const PlaceOrder = () => {
                             <div className="place-single">
                                 <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
 
-                                    <input className="form-control mb-3" defaultValue={user.displayName} {...register("name")} />
+                                    <input className="form-control mb-3" defaultValue={user.displayName} {...register("name")} required />
 
-                                    <input className="form-control mb-3" defaultValue={user.email} {...register("email", { required: true })} />
+                                    <input className="form-control mb-3" defaultValue={user.email} {...register("email", { required: true })} required />
                                     {errors.email && <span className="error">This field is required</span>}
                                     <input className="form-control mb-3" placeholder="Status" defaultValue={"pending"} {...register("status")} />
 
-                                    <input className="form-control mb-3" placeholder="Address" defaultValue="" {...register("address")} />
-                                    <input className="form-control mb-3" placeholder="City" defaultValue="" {...register("city")} />
-                                    <input className="form-control mb-3" placeholder="phone number" defaultValue="" {...register("phone")} />
+                                    <input className="form-control mb-3" placeholder="Address" defaultValue="" {...register("address")} required />
+                                    <input className="form-control mb-3" placeholder="City" defaultValue="" {...register("city")} required />
+                                    <input className="form-control mb-3" placeholder="phone number" defaultValue="" {...register("phone")} required />
 
                                     <input className="btn bg-warning text-white" type="submit" />
                                 </form>
