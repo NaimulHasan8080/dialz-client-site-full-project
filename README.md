@@ -12,8 +12,8 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ### `Available`
-1. Have admin and users different login system.
-2. Everyone can easily order to use our website
-3. This website have customer review system
+1. There is a separate dashboard for buyers and sellers so that buyers can purchase and update their orders. And the seller will be able to update the customer's order, manage, add new products and delete any product if required.
+2. Customers will be able to make their valuable comments and everyone will be able to see that
+3. The customer will be able to give a review between 0-5 according to their satisfaction
 4. Here have google log and email,password in system , so everyone can easily visit the site
 5. Any time can cancel the orders
