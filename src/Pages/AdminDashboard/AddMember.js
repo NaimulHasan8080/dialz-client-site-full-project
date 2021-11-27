@@ -13,8 +13,8 @@ const AddMember = () => {
 
         const formData = new FormData();
         formData.append('name', data.name);
-        formData.append('price', data.price);
-        formData.append('description', data.description);
+        formData.append('age', data.age);
+        formData.append('bio', data.bio);
         formData.append('image', data.image[0]);
         // const newData = { name, price, description, formData }
         axios.post('http://localhost:5000/member', formData)
@@ -50,7 +50,7 @@ const AddMember = () => {
                                     <input className="form-control mb-3" type="file" accept="image/*" {...register("image")} />
 
 
-                                    <input style={{ height: '80px' }} className="form-control mb-3" {...register("description")} placeholder="Bio-data" required />
+                                    <input style={{ height: '80px' }} className="form-control mb-3" {...register("bio")} placeholder="Bio-data" required />
 
                                     <input type="submit" className="btn btn-primary border-0 p-2 w-25 text-white fw-bold" />
                                 </form>
